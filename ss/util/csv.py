@@ -6,6 +6,7 @@ Created on Tue Jul 24 21:29:28 2018
 """
 
 import pandas as pd
+import configparser as cp
 
 class CSV:
     
@@ -15,4 +16,8 @@ class CSV:
         return c
         pass
     
+    pass
+
+def get_ini(path):
+    return cp.SafeConfigParser().read(path)
     pass
