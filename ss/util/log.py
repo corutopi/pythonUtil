@@ -11,6 +11,7 @@ class Log:
     _instance = None
     
     log_file = "text.txt"
+    log_error_file = "l.log"
     logging_mode = ""
     logging_style = ""
     
@@ -21,13 +22,10 @@ class Log:
     def __new__(cls):
         if cls._instance is None:
             cls._instance = super().__new__(cls)
-        ## initialize #########
-        pass
-        #######################
+            ## initialize #########
+            pass
+            #######################
         return cls._instance
-
-
-
 
 
 def _export_logFile(message):

@@ -12,12 +12,12 @@ class CSV:
     
     def get_csv(path):
         # engineの指定がないと日本語ファイルが読み込めない
-        c = pd.read_csv(path, encoding="cp932", engine="python")
-        return c
-        pass
+        return pd.read_csv(path, encoding="cp932", engine="python")
     
-    pass
+    def export_csv(path, data_frame):
+        pass
 
-def get_ini(path):
-    return cp.SafeConfigParser().read(path)
-    pass
+class INI:
+    def get_ini(path):
+        return cp.SafeConfigParser().read(path)
+        pass
