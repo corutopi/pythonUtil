@@ -18,14 +18,14 @@ class CSV:
     @classmethod
     def get_file(cls, path) -> pd.DataFrame:
         if os.path.isfile(path):
-            return pd.read_csv(path, encoding="shift_jis", )
+            return pd.read_csv(path, encoding="shift_jis", engine="python")
 #            return pd.read_csv(path, encoding="cp932", engine="python")
         else:
             return None
     
     @classmethod
-    def export_file(cls, path, data: pd.DataFrame):
-        data.to_csv(path, index=None, encoding="shift_jis")
+    def export_file(cls, path, df: pd.DataFrame):
+        df.to_csv(path, index=None, encoding="shift_jis")
 
 
 if __name__ == "__main__":

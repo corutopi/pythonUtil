@@ -191,30 +191,31 @@ def get_duplicated_frame(df: pd.DataFrame,
 
 
 if __name__ == "__main__":
-    df = pd.DataFrame([["Jolno", 15, "Italy", False, False, True],
-                       ["Koichi", 17, "Japan", False, True, True],
-                       ["RisaRisa", None, "Japan", False, False, False]],
-                      columns=["name", "age", "contory", 3, 4, 5])
-    print("before...")
-    print(df)
-    print()
-    print()
-    df = compress_columns(df, df.columns[3:6], "part", "is_appeared")
-    print("after...")
-    print(df)
-    print()
-    print()
-    
-    df = df.drop(5).reset_index(drop=True)
-    df = amplify_column(df, "part", "is_appeared")
-    print("and revers...")
-    print(df)
-    print()
-    print()
-    
-    for i in get_duplicated_frame(df, ["contory"]):
-        print(i)
-    
+    def main():
+        df = pd.DataFrame([["Jolno", 15, "Italy", False, False, True],
+                           ["Koichi", 17, "Japan", False, True, True],
+                           ["RisaRisa", None, "Japan", False, False, False]],
+                          columns=["name", "age", "contory", 3, 4, 5])
+        print("before...")
+        print(df)
+        print()
+        print()
+        df = compress_columns(df, df.columns[3:6], "part", "is_appeared")
+        print("after...")
+        print(df)
+        print()
+        print()
+
+        df = df.drop(5).reset_index(drop=True)
+        df = amplify_column(df, "part", "is_appeared")
+        print("and revers...")
+        print(df)
+        print()
+        print()
+
+        for i in get_duplicated_frame(df, ["contory"]):
+            print(i)
+    main()
     pass
 
 
