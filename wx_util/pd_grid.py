@@ -22,6 +22,11 @@ class PandasGrid(wx.grid.Grid):
             for c in range(len(df)):
                 self.SetCellValue(r, c, str(df.iat[r, c]))
 
+    def get_data_frame(self):
+        """Return DataFrame that have cells data.
+        :return:
+        """
+
 
 if __name__ == '__main__':
     def main():
